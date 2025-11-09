@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Leaflet Map Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="*" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .map-container {
+        width: 100%;
+        height: 200px;
+      }
+      .text-card-foreground {
+        color: #9f9c12;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="*"></script>
+
+    <div class="flex flex-row flex-wrap gap-4 p-8 justify-center">
+      <div
+        class="w-80 rounded-lg border bg-card text-card-foreground shadow-sm group cursor-pointer transition-all duration-300 hover:shadow-lg overflow-hidden border-border bg-gradient-to-b from-card to-background"
+      >
+        <div class="aspect-square overflow-hidden">
+          <img
+            src="./concrete.jpg"
+            alt="Oak Roof Beams"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="flex items-start justify-between gap-2">
+            <h3 class="font-semibold tracking-tight text-lg text-foreground">Oak Roof Beams</h3>
+            <div
+              class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 shrink-0"
+            >
+              Timber
+            </div>
+          </div>
+          <p class="text-sm flex items-center gap-1 text-muted-foreground">
+            
+            <div class="map-container" id="map1"></div>
+          </p>
+        </div>
+        <div class="p-6 pt-0 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-muted-foreground">Available:</span
+            ><span class="font-medium text-foreground">25 beams</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-muted-foreground">Price:</span
+            ><span class="font-semibold text-primary">1,200 DKK/beam</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-80 rounded-lg border bg-card text-card-foreground shadow-sm group cursor-pointer transition-all duration-300 hover:shadow-lg overflow-hidden border-border bg-gradient-to-b from-card to-background"
+      >
+        <div class="aspect-square overflow-hidden">
+          <img
+            src="./concrete.jpg"
+            alt="Oak Roof Beams"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="flex items-start justify-between gap-2">
+            <h3 class="font-semibold tracking-tight text-lg text-foreground">Oak Roof Beams</h3>
+            <div
+              class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 shrink-0"
+            >
+              Timber
+            </div>
+          </div>
+          <p class="text-sm flex items-center gap-1 text-muted-foreground">
+            
+            <div class="map-container" id="map2"></div>
+          </p>
+        </div>
+        <div class="p-6 pt-0 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-muted-foreground">Available:</span
+            ><span class="font-medium text-foreground">25 beams</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-muted-foreground">Price:</span
+            ><span class="font-semibold text-primary">1,200 DKK/beam</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-80 rounded-lg border bg-card text-card-foreground shadow-sm group cursor-pointer transition-all duration-300 hover:shadow-lg overflow-hidden border-border bg-gradient-to-b from-card to-background"
+      >
+        <div class="aspect-square overflow-hidden">
+          <img
+            src="./concrete.jpg"
+            alt="Oak Roof Beams"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="flex items-start justify-between gap-2">
+            <h3 class="font-semibold tracking-tight text-lg text-foreground">Oak Roof Beams</h3>
+            <div
+              class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 shrink-0"
+            >
+              Timber
+            </div>
+          </div>
+          <p class="text-sm flex items-center gap-1 text-muted-foreground">
+            
+            Aarhus
+            <div class="map-container" id="map3"></div>
+          </p>
+        </div>
+        <div class="p-6 pt-0 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-muted-foreground">Available:</span
+            ><span class="font-medium text-foreground">25 beams</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-muted-foreground">Price:</span
+            ><span class="font-semibold text-primary">1,200 DKK/beam</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-80 rounded-lg border bg-card text-card-foreground shadow-sm group cursor-pointer transition-all duration-300 hover:shadow-lg overflow-hidden border-border bg-gradient-to-b from-card to-background"
+      >
+        <div class="aspect-square overflow-hidden">
+          <img
+            src="./concrete.jpg"
+            alt="Oak Roof Beams"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="flex items-start justify-between gap-2">
+            <h3 class="font-semibold tracking-tight text-lg text-foreground">Oak Roof Beams</h3>
+            <div
+              class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 shrink-0"
+            >
+              Timber
+            </div>
+          </div>
+          <p class="text-sm flex items-center gap-1 text-muted-foreground">
+            
+          </p>
+        </div>
+        <div class="p-6 pt-0 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-muted-foreground">Available:</span
+            ><span class="font-medium text-foreground">25 beams</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-muted-foreground">Price:</span
+            ><span class="font-semibold text-primary">1,200 DKK/beam</span>
+          </div>
+        </div>
+        <div class="map-container" id="map4"></div>
+        </div>
+      <div
+        class="w-80 rounded-lg border bg-card text-card-foreground shadow-sm group cursor-pointer transition-all duration-300 hover:shadow-lg overflow-hidden border-border bg-gradient-to-b from-card to-background"
+      >
+        <div class="aspect-square overflow-hidden">
+          <img
+            src="./concrete.jpg"
+            alt="Oak Roof Beams"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+        <div class="flex flex-col space-y-1.5 p-6 pb-3">
+          <div class="flex items-start justify-between gap-2">
+            <h3 class="font-semibold tracking-tight text-lg text-foreground">Oak Roof Beams</h3>
+            <div
+              class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 shrink-0"
+            >
+              Timber
+            </div>
+          </div>
+          <p class="text-sm flex items-center gap-1 text-muted-foreground">
+            
+            Aarhus
+            <div class="map-container" id="map5"></div>
+          </p>
+        </div>
+        <div class="p-6 pt-0 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-muted-foreground">Available:</span
+            ><span class="font-medium text-foreground">25 beams</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-muted-foreground">Price:</span
+            ><span class="font-semibold text-primary">1,200 DKK/beam</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Initialize the map
+
+      
+      const maps = [
+        L.map('map1').setView([40.7128, -74.006], 13), // NYC coordinates
+        L.map('map2').setView([40.7128, -74.006], 13), // NYC coordinates
+        L.map('map3').setView([40.7128, -74.006], 13), // NYC coordinates
+        L.map('map4').setView([40.7128, -74.006], 13), // NYC coordinates
+        L.map('map5').setView([40.7128, -74.006], 13), // NYC coordinates
+      ];
+
+      // Add OpenStreetMap tiles
+      maps.forEach(map => {
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map)
+        // Add a marker
+        const marker = L.marker([40.7128, -74.006]).addTo(map);
+        marker.bindPopup('<b>Hello!</b><br>This is New York City.').openPopup();
+      });
+    </script>
+  </body>
+</html>

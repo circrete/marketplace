@@ -1,0 +1,42 @@
+{
+  "name": "circrete-marketplace",
+  "version": "0.0.1",
+  "scripts": {
+    "404": "cp out/404/index.html out/404.html",
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "bun run 404",
+    "server": "next start",
+    "start": "bun run dev",
+    "lint": "next lint",
+    "test": "bun run lint",
+    "serve": "http-server out -p 8080",
+    "downloadLocales": "locize download --project-id=0842ada9-1d1d-4d48-ab27-08f6a132f558 --ver=latest --clean=true --path=./public/locales",
+    "clean": "rimraf .next out"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.4",
+    "@react-three/fiber": "^9.3.0",
+    "i18next": "24.2.2",
+    "next": "15.1.6",
+    "next-i18next": "^15.4.2",
+    "next-language-detector": "^1.1.0",
+    "postcss": "^8.5.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-i18next": "^15.4.0",
+    "tailwind": "^4.0.0",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^24.3.1",
+    "autoprefixer": "^10.4.21",
+    "eslint-config-next": "15.1.6",
+    "http-server": "14.1.1",
+    "locize-cli": "8.4.0",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
+  }
+}

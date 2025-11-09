@@ -1,0 +1,14 @@
+# ignoring node modules
+node_modules
+
+# ignoring output directory
+out
+
+# ignoring bun.lock
+bun.lock
+
+# ignoring .env
+.env
+
+# ignoring .next
+.next
