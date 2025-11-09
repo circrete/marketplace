@@ -1,6 +1,10 @@
-const baseStyle = 'h-8';
+const baseStyle = 'h-5';
 
-export const SVGIcon: React.FC<{ src: string; className?: string; onClick?: () => void }> = ({ src, className, onClick }) => (
+export const SVGIcon: React.FC<{ src: string; className?: string; onClick?: () => void }> = ({
+  src,
+  className,
+  onClick
+}) => (
   <img
     src={src}
     alt="logo"

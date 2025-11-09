@@ -24,8 +24,8 @@ export const AllElements = () => {
         ]}
         withoutTopMargin
       />
-      <div className="max-w-standard-div w-full h-[100svh] grid grid-rows-[1fr_auto]">
-        <Map className="w-full h-[35svh]" elements={Elements} />
+      <div className="max-w-standard-div w-full h-[100svh] grid grid-rows-[1fr_auto] overflow-auto">
+        <Map className="w-full h-[35svh] z-1" elements={Elements} />
         <div className="overflow-y-auto">
           <div className="max-w-standard-div h-[calc(35vh+.5rem)] fixed top-0 w-full bg-background" />
           <div className="max-w-standard-div h-8 fixed top-[calc(35vh+.5rem)] w-full bg-linear-to-b from-background to-transparent" />
