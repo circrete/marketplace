@@ -9,11 +9,9 @@ const LinkComponent: React.FC<{
   skipLocaleHandling?: boolean;
   href: string;
   className?: string;
-}> = ({ href, className, ...props }) => {
+}> = ({ href, className = 'h-full w-full', ...props }) => {
   const router = useRouter();
-  return (
-    <Link className={className + ' cursor-pointer h-full w-full'} href={navigateTo(router.asPath, href)} {...props} />
-  );
+  return <Link className={className + ' cursor-pointer'} href={navigateTo(router.asPath, href)} {...props} />;
 };
 
 export default LinkComponent;
