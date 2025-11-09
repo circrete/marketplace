@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import { Navigation } from '@/components/Navigation';
-import { ElementCard } from '@/components/ElementCard';
+import { ElementMinimalCard } from '@/components/cards/ElementMinimalCard';
 import { Elements } from '@/lib/elements';
 import { Map } from '@/components/leaflet/LazyMap';
 import { getStaticPaths, makeStaticProps } from '@/lib/getStatic';
@@ -25,14 +25,14 @@ export const AllElements = () => {
         withoutTopMargin
       />
       <div className="max-w-standard-div w-full h-[100svh] grid grid-rows-[1fr_auto]">
-        <Map className="w-full h-[35vh]" elements={Elements} />
+        <Map className="w-full h-[35svh]" elements={Elements} />
         <div className="overflow-y-auto">
-          <div className="max-w-standard-div h-[calc(35vh+8px)] fixed top-0 w-full bg-background" />
-          <div className="max-w-standard-div h-8 fixed top-[calc(35vh+8px)] w-full bg-linear-to-b from-background to-transparent" />
+          <div className="max-w-standard-div h-[calc(35vh+.5rem)] fixed top-0 w-full bg-background" />
+          <div className="max-w-standard-div h-8 fixed top-[calc(35vh+.5rem)] w-full bg-linear-to-b from-background to-transparent" />
           <div className="h-12" />
           <div className="w-full element-card-grid">
             {Elements.map((element) => (
-              <ElementCard customWidthClassName="element-card" key={element.id} element={element} />
+              <ElementMinimalCard customWidthClassName="element-card" key={element.id} element={element} />
             ))}
           </div>
         </div>

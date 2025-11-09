@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import Link from './Link';
+import Link from '../Link';
 import { SVGIcon } from '@/components/SVGIcon';
 import heart from '/assets/icons/heart.svg';
 import brokenHeart from '/assets/icons/heart_broken.svg';
 import { ElementData } from '@/lib/elements';
 import { useCircreteStore } from '@/lib/store';
 
-export const ElementCard: React.FC<{
+export const ElementMinimalCard: React.FC<{
   element: ElementData;
   customWidthClassName?: string;
   customHeightClassName?: string;

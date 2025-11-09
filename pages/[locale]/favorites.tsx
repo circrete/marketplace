@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { getStaticPaths, makeStaticProps } from '../../lib/getStatic';
 
-import { ElementCard } from '@/components/ElementCard';
+import { ElementMinimalCard } from '@/components/cards/ElementMinimalCard';
 import { useCircreteStore } from '@/lib/store';
 import { Navigation } from '@/components/Navigation';
 import { Elements } from '@/lib/elements';
@@ -30,7 +30,7 @@ const Favorites: React.FC = () => {
           <p>{t('your-favorites')}</p>
           <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-8 p-8">
             {liked.values().map((index) => (
-              <ElementCard element={Elements[index]} />
+              <ElementMinimalCard element={Elements[index]} />
             ))}
           </div>
         </div>

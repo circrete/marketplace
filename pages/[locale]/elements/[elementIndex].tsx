@@ -3,7 +3,7 @@ import { getStaticPathsWithAdditionalParams, makeStaticProps } from '../../../li
 import { useTranslation } from 'react-i18next';
 import { Elements } from '@/lib/elements';
 import { Navigation } from '@/components/Navigation';
-import { ElementContentCard } from '@/components/ElementContentCard';
+import { ElementContentCard } from '@/components/cards/ElementContentCard';
 import { SVGIcon } from '@/components/SVGIcon';
 
 import heart from '/assets/icons/heart.svg';
