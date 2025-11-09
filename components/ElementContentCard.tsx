@@ -15,7 +15,7 @@ export const ElementContentCard: React.FC<{ element: ElementData }> = ({ element
         <h3>{t(element.type)}</h3>
         <div className="text-left">
           <p>{t('description')}</p>
-          <Map position={element.location} />
+          <Map className="w-full h-50" elements={[element]} />
         </div>
         <div className="grid grid-cols-2 gap-4 justify-between w-full pb-4">
           <span className="bg-white-700 text-black cursor-pointer p-2 shadow-xl border-1 rounded-2xl flex flex-row gap-2 justify-center">
