@@ -11,11 +11,15 @@ import cart from '/assets/icons/shopping_cart.svg';
 import customize from '/assets/icons/customize.svg';
 
 export const Element = () => {
+console.log('element component being rendered');
   const { t } = useTranslation(['404', 'common', 'footer']);
   const router = useRouter();
 
   const { elementIndex } = router.query;
   const index = Number(elementIndex);
+
+  console.log(index);
+  console.log(Elements[index]);
 
   return (
     <>

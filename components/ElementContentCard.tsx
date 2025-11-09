@@ -1,6 +1,7 @@
 import { ElementData } from '@/lib/elements';
 import { useTranslation } from 'react-i18next';
 import { SVGIcon } from '@/components/SVGIcon';
+import { Map } from '@/components/leaflet/LazyMap';
 import brokenHeart from '/assets/icons/heart_broken.svg';
 import cart from '/assets/icons/shopping_cart.svg';
 
@@ -12,7 +13,10 @@ export const ElementContentCard: React.FC<{ element: ElementData }> = ({ element
       <img src={element.src} alt="lamp" className="md:h-[50vh] w-full md:w-[50%] h-[50vh] object-cover" />
       <div className="my-auto px-4 font-bold flex flex-col items-start justify-between w-full gap-4 shadow-none">
         <h3>{t(element.type)}</h3>
-        <p className="text-left">{t('description')}</p>
+        <div className="text-left">
+          <p>{t('description')}</p>
+          <Map position={element.location} />
+        </div>
         <div className="grid grid-cols-2 gap-4 justify-between w-full pb-4">
           <span className="bg-white-700 text-black cursor-pointer p-2 shadow-xl border-1 rounded-2xl flex flex-row gap-2 justify-center">
             <SVGIcon src={brokenHeart.src} className="h-4 my-auto" /> {t('dislike')}
