@@ -4,7 +4,7 @@ export const SVGIcon: React.FC<{ src: string; className?: string; onClick?: () =
   <img
     src={src}
     alt="logo"
-    className={className ?? onClick ? baseStyle + ' cursor-pointer' : baseStyle}
+    className={onClick ? (className ?? baseStyle) + ' cursor-pointer' : className ?? baseStyle}
     onClick={
       onClick
         ? (e) => {

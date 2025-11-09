@@ -22,14 +22,14 @@ export const ElementCard: React.FC<{
       <div
         className={`flex flex-col items-center ${customWidthClassName} ${customHeightClassName} rounded-2xl overflow-clip shadow-xl`}
       >
-        <img src={element.src} alt="lamp" className="w-full h-[80%] object-cover" />
-        <div className="font-bold flex flex-row justify-between w-full gap-2 shadow-none">
+        <img src={element.src} alt="lamp" className="w-full h-[90%] object-cover" />
+        <div className="font-bold flex flex-row justify-between w-full gap-2 shadow-none p-2">
           <SVGIcon
             onClick={() => useCircreteStore.getState().addLiked(element.id)}
             src={heart.src}
             className="h-4 my-auto"
           />
-          <p className="text-10">{element.name}</p>
+          <p className="text-3 text-ellipsis overflow-hidden whitespace-nowrap">{element.name}</p>
           <SVGIcon
             onClick={() => useCircreteStore.getState().addDisliked(element.id)}
             src={brokenHeart.src}
