@@ -2,7 +2,7 @@ import { useTranslation } from 'next-i18next';
 import { getStaticPaths, makeStaticProps } from '../../lib/getStatic';
 
 import { ElementCard } from '@/components/ElementCard';
-import { useLampStore } from '@/lib/store';
+import { useCircreteStore } from '@/lib/store';
 import { Navigation } from '@/components/Navigation';
 import { Elements } from '@/lib/elements';
 import { SVGIcon } from '@/components/SVGIcon';
@@ -12,7 +12,7 @@ import customize from '/assets/icons/customize.svg';
 
 const Favorites: React.FC = () => {
   const { t } = useTranslation(['common', 'footer']);
-  const liked = useLampStore((s) => s.liked);
+  const liked = useCircreteStore((s) => s.liked);
 
   return (
     <>

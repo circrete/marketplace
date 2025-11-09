@@ -4,7 +4,7 @@ import { Navigation } from '@/components/Navigation';
 
 import { useState } from 'react';
 import { TinderCard } from '@/components/TinderCard';
-import { useLampStore } from '@/lib/store';
+import { useCircreteStore } from '@/lib/store';
 import { Elements } from '@/lib/elements';
 
 import { SVGIcon } from '@/components/SVGIcon';
@@ -18,12 +18,12 @@ export const TinderSlides = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const onLike = (index: number) => {
-    useLampStore.getState().addLiked(index);
+    useCircreteStore.getState().addLiked(index);
     setActiveIndex((prev) => prev + 1);
   };
 
   const onDislike = (index: number) => {
-    useLampStore.getState().addDisliked(index);
+    useCircreteStore.getState().addDisliked(index);
     setActiveIndex((prev) => prev + 1);
   };
 

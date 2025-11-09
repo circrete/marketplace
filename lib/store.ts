@@ -1,19 +1,32 @@
 import { create } from 'zustand';
 
-type LampStore = {
+export const LOCAL_STORAGE_KEY_LIKED = 'liked';
+export const LOCAL_STORAGE_KEY_DISLIKED = 'disliked';
+
+type CircreteStore = {
   liked: Set<number>;
   disliked: Set<number>;
+  _updateLiked: (liked: Set<number>) => void;
+  _updateDisliked: (disliked: Set<number>) => void;
   addLiked: (liked: number) => void;
   addDisliked: (disliked: number) => void;
   removeLiked: (liked: number) => void;
   removeDisliked: (disliked: number) => void;
 };
 
-export const useLampStore = create<LampStore>((set) => ({
+export const useCircreteStore = create<CircreteStore>((set, get) => ({
   liked: new Set(),
   disliked: new Set(),
-  addLiked: (liked) => set((state) => ({ liked: new Set([...state.liked, liked]) })),
-  addDisliked: (disliked) => set((state) => ({ disliked: new Set([...state.disliked, disliked]) })),
-  removeLiked: (liked) => set((state) => ({ liked: new Set([...state.liked, liked]) })),
-  removeDisliked: (disliked) => set((state) => ({ disliked: new Set([...state.disliked, disliked]) }))
+  _updateLiked: (liked) => {
+    set(() => ({ liked }));
+    localStorage.setItem(LOCAL_STORAGE_KEY_LIKED, JSON.stringify([...liked.values()]));
+  },
+  _updateDisliked: (disliked) => {
+    set(() => ({ disliked }));
+    localStorage.setItem(LOCAL_STORAGE_KEY_DISLIKED, JSON.stringify([...disliked.values()]));
+  },
+  addLiked: (liked) => get()._updateLiked(new Set([...get().liked, liked])),
+  addDisliked: (disliked) => get()._updateDisliked(new Set([...get().disliked, disliked])),
+  removeLiked: (liked) => get()._updateLiked(new Set([...get().liked, liked])),
+  removeDisliked: (disliked) => get()._updateDisliked(new Set([...get().disliked, disliked]))
 }));
