@@ -22,7 +22,7 @@ export const Header: React.FC<{ heading: string; title: string; className?: stri
           className="w-[min(min(30svh,80svw),300px)] min-w-[min(min(30svh,80svw),200px)]"
         />
         <p
-          className={className + 'lg:text-left text-[1.5rem] sm:text-[3rem] text-circretered max-w-[90svw] w-[690px] '}
+          className={className + ' lg:text-left text-[1.5rem] sm:text-[3rem] text-circretered max-w-[90svw] w-[690px] '}
         >
           {t(heading)}
         </p>
