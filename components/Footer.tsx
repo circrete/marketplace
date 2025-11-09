@@ -5,8 +5,8 @@ export const Footer = () => {
   const { t } = useTranslation('footer');
 
   return (
-    <footer>
-      <p>{t('description')}</p>
+    <footer className="flex flex-row justify-between items-cente gap-2">
+      <p>{t('change-locale')}: </p>
       <p>
         <LanguageSwitchLink />
       </p>
