@@ -6,9 +6,10 @@ import { useCircreteStore } from '@/lib/store';
 import { Navigation } from '@/components/Navigation';
 import { Elements } from '@/lib/elements';
 import { SVGIcon } from '@/components/SVGIcon';
-import heart from '/assets/icons/heart.svg';
+
 import cart from '/assets/icons/shopping_cart.svg';
-import customize from '/assets/icons/customize.svg';
+import burger from '/assets/icons/burger.svg';
+import home from '/assets/icons/home.svg';
 
 const Favorites: React.FC = () => {
   const { t } = useTranslation(['common', 'footer']);
@@ -19,9 +20,9 @@ const Favorites: React.FC = () => {
       <Navigation
         heading={'heading'}
         links={[
-          { href: 'tinder-slides', text: 'to-element-swiping', icon: <SVGIcon src={heart.src} /> },
-          { href: 'tinder-slides', text: 'to-element-swiping', icon: <SVGIcon src={cart.src} /> },
-          { href: 'tinder-slides', text: 'to-element-swiping', icon: <SVGIcon src={customize.src} /> }
+          { href: 'all-elements', text: 'to-all-elements', icon: <SVGIcon src={cart.src} /> },
+          { href: 'tinder-slides', text: 'to-element-swiping', icon: <SVGIcon src={burger.src} /> },
+          { href: '/', text: 'back-to-home', icon: <SVGIcon src={home.src} /> }
         ]}
       />
       <main className="w-[calc(min(100vw,1200px)-50px)] mx-auto">

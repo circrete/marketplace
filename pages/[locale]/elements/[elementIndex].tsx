@@ -3,12 +3,12 @@ import { getStaticPathsWithAdditionalParams, makeStaticProps } from '../../../li
 import { useTranslation } from 'react-i18next';
 import { Elements } from '@/lib/elements';
 import { Navigation } from '@/components/Navigation';
-import { Footer } from '@/components/Footer';
 import { ElementContentCard } from '@/components/ElementContentCard';
 import { SVGIcon } from '@/components/SVGIcon';
+
 import heart from '/assets/icons/heart.svg';
-import cart from '/assets/icons/shopping_cart.svg';
-import customize from '/assets/icons/customize.svg';
+import burger from '/assets/icons/burger.svg';
+import home from '/assets/icons/home.svg';
 
 export const Element = () => {
   const { t } = useTranslation(['404', 'common', 'footer']);
@@ -22,9 +22,9 @@ export const Element = () => {
       <Navigation
         heading={'heading'}
         links={[
-          { href: 'tinder-slides', text: 'to-element-swiping', icon: <SVGIcon src={heart.src} /> },
-          { href: 'tinder-slides', text: 'to-element-swiping', icon: <SVGIcon src={cart.src} /> },
-          { href: 'tinder-slides', text: 'to-element-swiping', icon: <SVGIcon src={customize.src} /> }
+          { href: 'favorites', text: 'to-favorites', icon: <SVGIcon src={heart.src} /> },
+          { href: 'tinder-slides', text: 'to-element-swiping', icon: <SVGIcon src={burger.src} /> },
+          { href: '/', text: 'back-to-home', icon: <SVGIcon src={home.src} /> }
         ]}
       />
       <main className="w-[calc(min(100vw,1200px)-50px)] mx-auto">
