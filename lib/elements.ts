@@ -18,10 +18,24 @@ export type ElementData = {
   id: number;
   src: string;
   name: string;
-  location: [number, number]; // latitude, longitude
+  location: {
+    position: [number, number]; // latitude, longitude
+    city: string;
+    zipCode: string;
+    country: string;
+    address: string;
+  };
   amount: number;
   dimensions: [number, number, number]; // width, height, depth
   type: ElementType;
+};
+
+const defaultLocation: ElementData['location'] = {
+  position: [55.67976570823383, 12.39401353031579],
+  city: 'Copenhagen',
+  zipCode: '2100',
+  country: 'Denmark',
+  address: '123 Main St'
 };
 
 export const Elements: ElementData[] = [
@@ -29,7 +43,7 @@ export const Elements: ElementData[] = [
     id: 1,
     src: column_01.src,
     name: 'Columns 7x345 A',
-    location: [55.67976570823383, 12.39401353031579],
+    location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
     type: 'column'
@@ -38,7 +52,7 @@ export const Elements: ElementData[] = [
     id: 2,
     src: column_02.src,
     name: 'Columns 7x345 B',
-    location: [55.67976570823383, 12.39401353031579],
+    location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
     type: 'column'
@@ -47,7 +61,7 @@ export const Elements: ElementData[] = [
     id: 3,
     src: column_03.src,
     name: 'Columns 7x345 C',
-    location: [55.67976570823383, 12.39401353031579],
+    location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
     type: 'column'
@@ -56,7 +70,7 @@ export const Elements: ElementData[] = [
     id: 4,
     src: column_04.src,
     name: 'Columns 7x345 D',
-    location: [55.67976570823383, 12.39401353031579],
+    location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
     type: 'column'
@@ -65,7 +79,7 @@ export const Elements: ElementData[] = [
     id: 5,
     src: hollow_core_01.src,
     name: 'Hollow Core 8x345',
-    location: [55.67976570823383, 12.39401353031579],
+    location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
     type: 'hollow-core-slab'
@@ -74,7 +88,7 @@ export const Elements: ElementData[] = [
     id: 6,
     src: hollow_core_02.src,
     name: 'Hollow Core 4 789',
-    location: [55.67976570823383, 12.39401353031579],
+    location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
     type: 'hollow-core-slab'
@@ -83,7 +97,7 @@ export const Elements: ElementData[] = [
     id: 7,
     src: hollow_core_03.src,
     name: 'Hollow Core 8x345',
-    location: [55.67976570823383, 12.39401353031579],
+    location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
     type: 'hollow-core-slab'
@@ -92,7 +106,7 @@ export const Elements: ElementData[] = [
     id: 8,
     src: hollow_core_04.src,
     name: 'Hollow Core 4 789',
-    location: [55.67976570823383, 12.39401353031579],
+    location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
     type: 'hollow-core-slab'
@@ -101,7 +115,7 @@ export const Elements: ElementData[] = [
     id: 9,
     src: tt_slabs_01.src,
     name: 'TT-Slab 6 234',
-    location: [55.67976570823383, 12.39401353031579],
+    location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
     type: 'tt-slab'
@@ -110,7 +124,7 @@ export const Elements: ElementData[] = [
     id: 10,
     src: tt_slabs_02.src,
     name: 'TT-Slab 789',
-    location: [55.67976570823383, 12.39401353031579],
+    location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
     type: 'tt-slab'
@@ -119,7 +133,7 @@ export const Elements: ElementData[] = [
     id: 11,
     src: tt_slabs_03.src,
     name: 'TT-Slab 789',
-    location: [55.67976570823383, 12.39401353031579],
+    location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
     type: 'tt-slab'
@@ -128,7 +142,7 @@ export const Elements: ElementData[] = [
     id: 12,
     src: tt_slabs_04.src,
     name: 'TT-Slab 6 234',
-    location: [55.67976570823383, 12.39401353031579],
+    location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
     type: 'tt-slab'
@@ -137,7 +151,7 @@ export const Elements: ElementData[] = [
     id: 13,
     src: tt_slabs_05.src,
     name: 'TT-Slab 789',
-    location: [55.67976570823383, 12.39401353031579],
+    location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
     type: 'tt-slab'
