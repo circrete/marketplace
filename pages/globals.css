@@ -41,8 +41,8 @@
   display: flex;
   flex-direction: column;
   margin: 0;
-  min-height: 100vh;
-  overflow-x: hidden;
+  min-height: 100svh;
+  overflow: none;
 }
 
 h1,
