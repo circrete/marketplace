@@ -15,7 +15,7 @@
 }
 
 .max-w-standard-div {
-  max-width: calc(min(100vw, 1200px) - 50px);
+  max-width: calc(min(100vw, 1200px) - 20px);
   margin: 0 auto;
 }
 
