@@ -18,15 +18,7 @@ const CircreteMarketplace = ({ Component, pageProps }: { Component: any; pagePro
     }
   }, []);
 
-  return (
-    <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" />
-        <meta name="mobile-web-app-capable" content="yes" />
-      </Head>
-      <Component {...pageProps} />
-    </>
-  );
+  return <Component {...pageProps} />;
 };
 
 export default appWithTranslation(CircreteMarketplace);
