@@ -11,7 +11,7 @@ const Homepage = () => {
 
   return (
     <>
-      <main className="bg-circretemokka-900">
+      <div className="bg-circretemokka-900 h-[100svh] flex flex-col justify-around items-center">
         <Header className="text-black" heading={'h1'} title={'title'} />
         <div className="flex flex-col sm:flex-row gap-x-4 gap-y-1">
           <Link href="/all-elements">
@@ -24,8 +24,8 @@ const Homepage = () => {
             <button type="button">{t('to-element-swiping')}</button>
           </Link>
         </div>
-      </main>
-      <Footer />
+        <Footer />
+      </div>
     </>
   );
 };
