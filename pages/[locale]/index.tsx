@@ -13,7 +13,7 @@ const Homepage = () => {
     <>
       <main className="bg-circretemokka-900">
         <Header className="text-black" heading={'h1'} title={'title'} />
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-col sm:flex-row gap-x-4 gap-y-1">
           <Link href="/all-elements">
             <button type="button">{t('to-all-elements')}</button>
           </Link>
