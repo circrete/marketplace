@@ -3,8 +3,11 @@ import { Navigation } from '@/components/Navigation';
 import { ElementCard } from '@/components/ElementCard';
 import { Elements } from '@/lib/elements';
 import { Map } from '@/components/leaflet/LazyMap';
+import { getStaticPaths, makeStaticProps } from '@/lib/getStatic';
 
 export const AllElements = () => {
+  const { t } = useTranslation(['all-elements']);
+
   return (
     <>
       <Navigation heading={'all-elements'} links={[]} withoutTopMargin />
@@ -26,3 +29,6 @@ export const AllElements = () => {
 };
 
 export default AllElements;
+
+const getStaticProps = makeStaticProps(['all-elements']);
+export { getStaticPaths, getStaticProps };
