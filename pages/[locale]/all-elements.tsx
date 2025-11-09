@@ -1,21 +1,25 @@
 import { useTranslation } from 'next-i18next';
-import { getStaticPaths, makeStaticProps } from '../../lib/getStatic';
 import { Navigation } from '@/components/Navigation';
-import { Footer } from '@/components/Footer';
 import { ElementCard } from '@/components/ElementCard';
 import { Elements } from '@/lib/elements';
-import { Header } from '@/components/Header';
+import { Map } from '@/components/leaflet/LazyMap';
 
 export const AllElements = () => {
-  const { t } = useTranslation(['common', 'footer']);
-
   return (
     <>
-      <Navigation heading={'all-elements'} links={[]} />
-      <div className="max-w-standard-div grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-8 p-8">
-        {Elements.map((element) => (
-          <ElementCard key={element.id} element={element} />
-        ))}
+      <Navigation heading={'all-elements'} links={[]} withoutTopMargin />
+      <div className="max-w-standard-div w-full h-[100svh] grid grid-rows-[1fr_auto]">
+        <Map className="w-full h-[35vh]" elements={Elements} />
+        <div className="overflow-y-auto">
+          <div className="max-w-standard-div h-[calc(35vh+8px)] fixed top-0 w-full bg-background" />
+          <div className="max-w-standard-div h-8 fixed top-[calc(35vh+8px)] w-full bg-linear-to-b from-background to-transparent" />
+          <div className="h-12" />
+          <div className="w-full flex flex-row flex-wrap justify-between gap-8">
+            {Elements.map((element) => (
+              <ElementCard key={element.id} element={element} />
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
