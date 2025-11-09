@@ -6,7 +6,6 @@
       font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
       fill: #dc4057;
       text-anchor: middle;
-      dominant-baseline: middle;
       font-weight: bold;
     }
     tspan {
@@ -15,7 +14,7 @@
       fill: none;
     }
   </style>
-  <text x="50%" y="50%">
-    <tspan>c</tspan>ircrete
+  <text x="50%" y="50%" alignment-baseline="middle">
+    <tspan alignment-baseline="middle">c</tspan>ircrete
   </text>
 </svg>
