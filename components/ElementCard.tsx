@@ -3,7 +3,6 @@ import Link from './Link';
 import { SVGIcon } from '@/components/SVGIcon';
 import heart from '/assets/icons/heart.svg';
 import brokenHeart from '/assets/icons/heart_broken.svg';
-import cart from '/assets/icons/shopping_cart.svg';
 import { ElementData } from '@/lib/elements';
 import { useCircreteStore } from '@/lib/store';
 
