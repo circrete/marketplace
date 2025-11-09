@@ -12,7 +12,7 @@ export const Navigation: React.FC<{
 
   return (
     <>
-      <div className="fixed top-0 w-[100vw] z-10 bg-linear-to-b from-white to-transparent">
+      <div className="fixed top-0 w-[100vw] z-10000 bg-linear-to-b from-background to-transparent">
         <div className="w-[calc(min(100vw,1200px)-50px)] mx-[calc(max(0px,calc(50vw-600px))+25px)] left-0 p-2 flex flex-row items-center justify-between">
           <Link href="/">
             <img
@@ -34,7 +34,7 @@ export const Navigation: React.FC<{
           </span>
         </div>
       </div>
-      {withoutTopMargin ? null : <span className="h-12" />}
+      {withoutTopMargin ? null : <span className="h-18" />}
     </>
   );
 };
