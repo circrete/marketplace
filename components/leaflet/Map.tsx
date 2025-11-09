@@ -29,14 +29,12 @@ export const Map: React.FC<{ elements: ElementData[]; className: string }> = ({ 
       attributionControl={false}
       zoomControl={false}
       whenReady={
-        ((map: { target: Leaflet.Map }) => {
-          console.log(map.target);
+        ((map: { target: Leaflet.Map }) =>
           Leaflet.control
             .zoom({
               position: 'bottomleft'
             })
-            .addTo(map.target);
-        }) as any
+            .addTo(map.target)) as any
       }
     >
       <TileLayer

@@ -7,16 +7,14 @@ import { useCircreteStore, LOCAL_STORAGE_KEY_LIKED, LOCAL_STORAGE_KEY_DISLIKED }
 const CircreteMarketplace = ({ Component, pageProps }: { Component: any; pageProps: any }) => {
   useEffect(() => {
     if (localStorage.getItem(LOCAL_STORAGE_KEY_LIKED)) {
-      console.log(localStorage.getItem(LOCAL_STORAGE_KEY_LIKED));
       useCircreteStore.setState(() => ({
         liked: new Set(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_LIKED)!) as number[])
       }));
     }
     if (localStorage.getItem(LOCAL_STORAGE_KEY_DISLIKED)) {
-      console.log(localStorage.getItem(LOCAL_STORAGE_KEY_DISLIKED));
-      // useCircreteStore.setState(() => ({
-      //   disliked: new Set(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_DISLIKED)!) as number[])
-      // }));
+      useCircreteStore.setState(() => ({
+        disliked: new Set(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_DISLIKED)!) as number[])
+      }));
     }
   }, []);
 
