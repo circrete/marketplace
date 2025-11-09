@@ -14,9 +14,9 @@ export const AllElements = () => {
           <div className="max-w-standard-div h-[calc(35vh+8px)] fixed top-0 w-full bg-background" />
           <div className="max-w-standard-div h-8 fixed top-[calc(35vh+8px)] w-full bg-linear-to-b from-background to-transparent" />
           <div className="h-12" />
-          <div className="w-full flex flex-row flex-wrap justify-between gap-x-1 gap-y-4">
+          <div className="w-full element-card-grid">
             {Elements.map((element) => (
-              <ElementCard key={element.id} element={element} />
+              <ElementCard customWidthClassName="element-card" key={element.id} element={element} />
             ))}
           </div>
         </div>

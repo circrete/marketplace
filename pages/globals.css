@@ -5,7 +5,10 @@
 :root {
   --color-circretered: #dc4057;
   --color-circretemokka: #eaf1cf;
-  --color-background: color-mix(in oklab, var(--color-circretemokka) 40%, white 60%)
+  --color-background: color-mix(in oklab, var(--color-circretemokka) 40%, white 60%);
+  --standard-page-max-width: calc(min(100vw, 1200px) - 20px);
+  --element-card-cell-widthmin: 180px;
+  --element-card-cell-horizontalgap: 8px;
 }
 
 @theme {
@@ -15,8 +18,20 @@
 }
 
 .max-w-standard-div {
-  max-width: calc(min(100vw, 1200px) - 20px);
+  max-width: var(--standard-page-max-width);
   margin: 0 auto;
+}
+
+
+
+.element-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--element-card-cell-widthmin), 1fr));
+  gap: 16px var(--element-card-cell-horizontalgap);
+}
+
+.element-card {
+  width: 100%;
 }
 
 #__next {
