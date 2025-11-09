@@ -12,7 +12,7 @@ const LanguageSwitchLink: React.FC = () => {
       value={currentLocale}
       onChange={(e) => {
         const locale = e.target.value;
-        router.push(changeLocale(router.asPath, locale));
+        router.push(changeLocale(router.asPath, locale), undefined, { scroll: false });
       }}
     >
       {i18nextConfig.i18n.locales.map((locale) => (
