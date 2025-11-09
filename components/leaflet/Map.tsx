@@ -4,19 +4,58 @@ import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import 'leaflet-defaulticon-compatibility';
 
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { ElementData } from '@/lib/elements';
+import { useEffect, useRef } from 'react';
+import * as Leaflet from 'leaflet';
 
-export const Map: React.FC<{ position: [number, number] }> = ({ position }) => {
+const getCenter = (elements: ElementData[]) =>
+  elements.reduce(
+    (acc, element) => {
+      return [
+        acc[0] + element.location.position[0] / elements.length,
+        acc[1] + element.location.position[1] / elements.length
+      ];
+    },
+    [0, 0]
+  ) as [number, number];
+
+export const Map: React.FC<{ elements: ElementData[]; className: string }> = ({ elements, className }) => {
   return (
-    <MapContainer className="w-full h-100" center={position} zoom={11} scrollWheelZoom={true}>
+    <MapContainer
+      className={className}
+      center={getCenter(elements)}
+      zoom={elements.length > 1 ? 9 : 11}
+      scrollWheelZoom={true}
+      attributionControl={false}
+      zoomControl={false}
+      whenReady={
+        ((map: { target: Leaflet.Map }) => {
+          console.log(map.target);
+          Leaflet.control
+            .zoom({
+              position: 'bottomleft'
+            })
+            .addTo(map.target);
+        }) as any
+      }
+    >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution='<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={position}>
-        <Popup>
-          This Marker icon is displayed correctly with <i>leaflet-defaulticon-compatibility</i>.
-        </Popup>
-      </Marker>
+      {elements.map((element) => (
+        <Marker position={element.location.position}>
+          <Popup>
+            <h4>{element.name}</h4>
+            <span className="flex flex-col gap-2">
+              <p>
+                {element.location.country}, {element.location.city}, {element.location.zipCode}
+              </p>
+              <p>{element.location.address}</p>
+            </span>
+          </Popup>
+        </Marker>
+      ))}
     </MapContainer>
   );
 };
