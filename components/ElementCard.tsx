@@ -9,7 +9,7 @@ export const ElementCard: React.FC<{ element: ElementData }> = ({ element }) => 
   const { t } = useTranslation('common');
 
   return (
-    <Link href={`/elements/${element.id}`}>
+    <Link href={`/elements/${element.id}`} className="">
       <div className="flex flex-col items-center w-[200px] h-[300px] rounded-2xl overflow-clip shadow-xl">
         <img src={element.src} alt="lamp" className="w-[200px] h-[230px] object-cover" />
         <div className="my-auto px-4 font-bold flex flex-row justify-between w-full gap-2 shadow-none">
