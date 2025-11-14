@@ -34,14 +34,13 @@ const Favorites: React.FC = () => {
           { href: 'tinder-slides', text: 'to-element-swiping', icon: <SVGIcon src={burger.src} /> },
           { href: '/', text: 'back-to-home', icon: <SVGIcon src={home.src} /> }
         ]}
+        withoutTopMargin
       />
       {elements.length ? (
-        <main>
-          <div>
-            <p>{t('your-favorites')}</p>
-            <CardRenderer detailLevel="content" elements={elements} />
-          </div>
-        </main>
+        <div className="w-full h-[100svh] grid grid-rows-[1fr_auto] max-w-standard-div">
+          <p className="mt-[50px] h-[25px]">{t('your-favorites')}</p>
+          <CardRenderer className="h-[calc(100svh-75px)]" detailLevel="content" elements={elements} />
+        </div>
       ) : (
         <div>{t('no-favorites')}</div>
       )}

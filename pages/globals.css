@@ -54,8 +54,26 @@
 }
 
 .element-card {
-  width: 100%;
+  border: 1px solid rgb(115, 110, 110);
+  /** make the card slightly bigger on hover */
+  transform: scale(1.0);
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.26);
+  transition: 0.2s ease-in-out;
+  filter: saturate(70%);
 }
+
+.element-card:hover {
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.46);
+  filter: saturate(110%);
+}
+
+.element-card.minimal:hover {
+  transform: scale(1.01);
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.26);
+  transition: 0.2s ease-in-out;
+  filter: saturate(110%);
+}
+
 
 #__next {
   font-family: 'Poppins', sans-serif;
@@ -123,10 +141,13 @@ button {
   white-space: nowrap;
   width: auto;
   max-width: 200px;
+  scale: 1.0;
+  transition: 0.2s ease-in-out;
 }
 
 button:hover,
 button:focus {
+  transform: scale(1.01);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 

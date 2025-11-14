@@ -17,7 +17,7 @@ export const ElementContentCard: React.FC<ICardContentProps> = ({ element }) => 
   const { t } = useTranslation(['common', 'element-type']);
 
   return (
-    <div className="grid grid-cols-[1fr] md:grid-cols-[1fr_1fr] flex-col items-center rounded-2xl overflow-clip shadow-xl mx-auto gap-4">
+    <div className="element-card grid grid-cols-[1fr] md:grid-cols-[1fr_1fr] flex-col items-center rounded-2xl overflow-clip shadow-xl mx-auto gap-4">
       <img src={element.src} alt="lamp" className="h-[calc(min(50vh,20rem))] md:h-120 w-full object-cover" />
       <div className="my-auto px-4 font-bold flex flex-col items-start justify-between w-full gap-4 shadow-none">
         <h3>{t(element.type)}</h3>
