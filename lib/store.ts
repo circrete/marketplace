@@ -10,7 +10,7 @@ type CircreteStore = {
   _updateDisliked: (disliked: Set<number>) => void;
   addLiked: (liked: number) => void;
   addDisliked: (disliked: number) => void;
-  removeLiked: (liked: number) => void;
+  removeLiked: (likedId: number) => void;
   removeDisliked: (disliked: number) => void;
 };
 
@@ -25,8 +25,13 @@ export const useCircreteStore = create<CircreteStore>((set, get) => ({
     set(() => ({ disliked }));
     localStorage.setItem(LOCAL_STORAGE_KEY_DISLIKED, JSON.stringify([...disliked.values()]));
   },
-  addLiked: (liked) => get()._updateLiked(new Set([...get().liked, liked])),
+  addLiked: (liked) => {
+    get()._updateLiked(new Set([...get().liked, liked]));
+  },
   addDisliked: (disliked) => get()._updateDisliked(new Set([...get().disliked, disliked])),
-  removeLiked: (liked) => get()._updateLiked(new Set([...get().liked, liked])),
+  removeLiked: (likedId) => {
+    const liked = get().liked;
+    if (liked.delete(likedId)) get()._updateLiked(new Set([...liked]));
+  },
   removeDisliked: (disliked) => get()._updateDisliked(new Set([...get().disliked, disliked]))
 }));
