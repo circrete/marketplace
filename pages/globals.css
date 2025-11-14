@@ -23,11 +23,17 @@
 }
 
 
-
 .element-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--element-card-cell-widthmin), 1fr));
   gap: 16px var(--element-card-cell-horizontalgap);
+}
+
+.element-card-grid.minimal {
+  grid-template-columns: repeat(auto-fill, minmax(var(--element-card-cell-widthmin), 1fr));
+}
+
+.element-card-grid.content {
+  grid-template-columns: 1fr;
 }
 
 .element-card {

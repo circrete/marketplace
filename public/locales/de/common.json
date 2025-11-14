@@ -13,5 +13,8 @@
   "name": "Name",
   "description": "Ein Stück Harmonie für Ihr Zuhause. Sanfte Wellen fließen über seine Oberfläche. Ob im Wohnzimmer, Schlafzimmer oder als stilvoller Akzent im Büro - dieses Element schafft eine Atmosphäre der Ruhe, des Gleichgewichts und zeitloser Eleganz.",
   "dislike": "Nicht mögen",
-  "buy": "Kaufen"
+  "buy": "Kaufen",
+  "detail-level": "Detailstufe",
+  "minimal": "Kompakt",
+  "content": "Detailliert"
 }

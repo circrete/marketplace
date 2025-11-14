@@ -12,7 +12,7 @@ import tt_slabs_03 from '/assets/images/elements/tt-slabs-3.jpg';
 import tt_slabs_04 from '/assets/images/elements/tt-slabs-4.jpg';
 import tt_slabs_05 from '/assets/images/elements/tt-slabs-5.jpg';
 
-export type ElementType = 'column' | 'tt-slab' | 'hollow-core-slab';
+export const ElementTypes = ['column', 'tt-slab', 'hollow-core-slab'] as const;
 
 export type ElementData = {
   id: number;
@@ -27,7 +27,7 @@ export type ElementData = {
   };
   amount: number;
   dimensions: [number, number, number]; // width, height, depth
-  type: ElementType;
+  type: (typeof ElementTypes)[number];
 };
 
 const defaultLocation: ElementData['location'] = {

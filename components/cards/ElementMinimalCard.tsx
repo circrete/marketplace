@@ -3,24 +3,16 @@ import Link from '../Link';
 import { SVGIcon } from '@/components/SVGIcon';
 import heart from '/assets/icons/heart.svg';
 import brokenHeart from '/assets/icons/heart_broken.svg';
-import { ElementData } from '@/lib/elements';
 import { useCircreteStore } from '@/lib/store';
+import { ICardContentProps } from '@/lib/cardContent';
 
-export const ElementMinimalCard: React.FC<{
-  element: ElementData;
-  customWidthClassName?: string;
-  customHeightClassName?: string;
-}> = ({
-  element,
-  customWidthClassName = 'w-[calc(min(200px,45svw))]',
-  customHeightClassName = 'h-[calc(min(300px,60svw))]'
-}) => {
+export const ElementMinimalCard: React.FC<ICardContentProps> = ({ element }) => {
   const { t } = useTranslation('common');
 
   return (
     <Link href={`/elements/${element.id}`} className="">
       <div
-        className={`flex flex-col items-center ${customWidthClassName} ${customHeightClassName} rounded-2xl overflow-clip shadow-xl`}
+        className={`flex flex-col items-center element-card h-[calc(min(300px,60svw))] rounded-2xl overflow-clip shadow-xl`}
       >
         <img src={element.src} alt="lamp" className="w-full h-[90%] object-cover" />
         <div className="font-bold flex flex-row justify-between w-full gap-2 shadow-none p-2">

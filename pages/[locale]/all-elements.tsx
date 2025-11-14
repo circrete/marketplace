@@ -9,6 +9,7 @@ import { SVGIcon } from '@/components/SVGIcon';
 import heart from '/assets/icons/heart.svg';
 import burger from '/assets/icons/burger.svg';
 import home from '/assets/icons/home.svg';
+import { CardRenderer } from '@/components/cards/CardRenderer';
 
 export const AllElements = () => {
   const { t } = useTranslation(['all-elements']);
@@ -26,16 +27,7 @@ export const AllElements = () => {
       />
       <div className="max-w-standard-div w-full h-[100svh] grid grid-rows-[1fr_auto] overflow-auto">
         <Map className="w-full h-[35svh] z-1" elements={Elements} />
-        <div className="overflow-y-auto">
-          <div className="max-w-standard-div h-[calc(35vh+.5rem)] fixed top-0 w-full bg-background" />
-          <div className="max-w-standard-div h-8 fixed top-[calc(35vh+.5rem)] w-full bg-linear-to-b from-background to-transparent" />
-          <div className="h-12" />
-          <div className="w-full element-card-grid">
-            {Elements.map((element) => (
-              <ElementMinimalCard customWidthClassName="element-card" key={element.id} element={element} />
-            ))}
-          </div>
-        </div>
+        <CardRenderer className="h-[65svh]" elements={Elements} />
       </div>
     </>
   );
