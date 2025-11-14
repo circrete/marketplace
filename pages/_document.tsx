@@ -8,7 +8,7 @@ class MyDocument extends Document {
     return (
       <Html lang={currentLocale as string}>
         <Head>
-          <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,600,700" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700" rel="stylesheet" />
         </Head>
         <body>
           <Main />
