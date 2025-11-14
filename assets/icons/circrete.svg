@@ -3,7 +3,7 @@
   <style>
     text {
       font-size: 200px;
-      font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+      font-family: ui-sans-serif, system-ui, sans-serif, 'Poppins';
       fill: #dc4057;
       text-anchor: middle;
       font-weight: bold;
