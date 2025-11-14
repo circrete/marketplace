@@ -11,10 +11,19 @@ import cart from '/assets/icons/shopping_cart.svg';
 import burger from '/assets/icons/burger.svg';
 import home from '/assets/icons/home.svg';
 import { CardRenderer } from '@/components/cards/CardRenderer';
+import { useMemo } from 'react';
 
 const Favorites: React.FC = () => {
   const { t } = useTranslation(['common', 'footer']);
   const liked = useCircreteStore((s) => s.liked);
+
+  const elements = useMemo(
+    () =>
+      [...liked.values()]
+        .map((index) => Elements.find((element) => element.id === index))
+        .filter((element) => element) as ElementData[],
+    [liked]
+  );
 
   return (
     <>
@@ -26,12 +35,16 @@ const Favorites: React.FC = () => {
           { href: '/', text: 'back-to-home', icon: <SVGIcon src={home.src} /> }
         ]}
       />
-      <main className="w-[calc(min(100vw,1200px)-50px)] mx-auto">
-        <div className="mt-[65px] w-[calc(min(100vw,1200px)-50px)] mx-auto">
-          <p>{t('your-favorites')}</p>
-          <CardRenderer elements={[...liked.values()].map((index) => Elements[index]).filter((element) => element)} />
-        </div>
-      </main>
+      {elements.length ? (
+        <main>
+          <div>
+            <p>{t('your-favorites')}</p>
+            <CardRenderer detailLevel="content" elements={elements} />
+          </div>
+        </main>
+      ) : (
+        <div>{t('no-favorites')}</div>
+      )}
     </>
   );
 };
