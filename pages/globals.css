@@ -6,9 +6,19 @@
   --color-circretered: #dc4057;
   --color-circretemokka: #eaf1cf;
   --color-background: color-mix(in oklab, var(--color-circretemokka) 40%, white 60%);
-  --standard-page-max-width: calc(min(100vw, 1200px) - 20px);
+  --default-max-width: 1200px;
+  --standard-page-max-width: calc(min(100vw, var(--default-max-width)));
+  --card_grid_left_right_padding: 1rem;
+  --card_grid-max-width: min(100vw, calc(var(--default-max-width) + var(--card_grid_left_right_padding) * 2));
+  --card_grid-max-width-with-gap: min(100vw, calc(var(--default-max-width) + var(--card_grid_left_right_padding) * 2 + var(--element-card-cell-horizontalgap) * 2));
+  /** 
+    helper variable: if the viewport width is more than the var(--default-max-width), add a padding of the delta of the viewport width and the var(--card_grid-max-width)
+    maximum value is var(--card_grid_left_right_padding)
+  */
+  --card_grid_other_content_padding-lr: min(max(calc((var(--card_grid-max-width) - var(--standard-page-max-width))) * 0.5, 0px), var(--card_grid_left_right_padding));
+  --card_grid_padding-lr: min(max(calc((var(--card_grid-max-width-with-gap) - var(--standard-page-max-width))) * 0.5, var(--element-card-cell-horizontalgap)), calc(var(--card_grid_left_right_padding)));
   --element-card-cell-widthmin: 180px;
-  --element-card-cell-horizontalgap: 8px;
+  --element-card-cell-horizontalgap: .5rem;
 }
 
 @theme {
@@ -18,14 +28,21 @@
 }
 
 .max-w-standard-div {
-  max-width: var(--standard-page-max-width);
-  margin: 0 auto;
+  max-width: var(--card_grid-max-width);
+  margin: 0 auto;}
+
+.standard-padding {
+  padding: 0 var(--card_grid_other_content_padding-lr);
 }
 
+.card-grid-padding {
+  padding: 0 var(--card_grid_padding-lr);
+}
 
 .element-card-grid {
   display: grid;
   gap: 16px var(--element-card-cell-horizontalgap);
+  margin-bottom: 2rem;
 }
 
 .element-card-grid.minimal {
@@ -61,6 +78,7 @@ h1 {
   margin: 5rem 0;
   color: var(--color-circretered);
 }
+
 h2 {
   min-width: 18rem;
   font-size: 2rem;
@@ -118,7 +136,6 @@ main {
   flex: 1;
   justify-content: center;
   align-items: center;
-  /* overflow-x: hidden; */
 }
 
 footer {

@@ -15,7 +15,7 @@ export const Header: React.FC<{ heading: string; title: string; className?: stri
         <link rel="icon" href={logo.src} />
         <title>{t(title)}</title>
       </Head>
-      <div className="max-w-standard-div flex lg:flex-row lg:justify-center flex-col items-center justify-center gap-x-8 gap-y-2 p-4">
+      <div className="max-w-standard-div standard-padding flex lg:flex-row lg:justify-center flex-col items-center justify-center gap-x-8 gap-y-2 p-4">
         <img
           src={logo.src}
           alt="logo"

@@ -19,9 +19,6 @@ const Homepage = () => {
         <Link href="/favorites">
           <button type="button">{t('to-favorites')}</button>
         </Link>
-        <Link href="/tinder-slides">
-          <button type="button">{t('to-element-swiping')}</button>
-        </Link>
       </div>
       <Footer />
     </div>

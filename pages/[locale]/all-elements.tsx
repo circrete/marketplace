@@ -25,8 +25,10 @@ export const AllElements = () => {
         ]}
         withoutTopMargin
       />
-      <div className="max-w-standard-div w-full h-[100svh] grid grid-rows-[1fr_auto] overflow-auto">
-        <Map className="w-full h-[35svh] z-1" elements={Elements} />
+      <div className="w-full h-[100svh] grid grid-rows-[1fr_auto] overflow-visible max-w-standard-div">
+        <div className="standard-padding w-full">
+          <Map className="w-full h-[35svh] z-1" elements={Elements} />
+        </div>
         <CardRenderer className="h-[65svh]" elements={Elements} />
       </div>
     </>
