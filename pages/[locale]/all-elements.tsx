@@ -20,7 +20,6 @@ export const AllElements = () => {
         heading={'all-elements'}
         links={[
           { href: 'favorites', text: 'to-favorites', icon: <SVGIcon src={heart.src} /> },
-          { href: 'tinder-slides', text: 'to-element-swiping', icon: <SVGIcon src={burger.src} /> },
           { href: '/', text: 'back-to-home', icon: <SVGIcon src={home.src} /> }
         ]}
         withoutTopMargin

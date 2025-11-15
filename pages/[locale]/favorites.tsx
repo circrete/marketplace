@@ -31,7 +31,6 @@ const Favorites: React.FC = () => {
         heading={'heading'}
         links={[
           { href: 'all-elements', text: 'to-all-elements', icon: <SVGIcon src={cart.src} /> },
-          { href: 'tinder-slides', text: 'to-element-swiping', icon: <SVGIcon src={burger.src} /> },
           { href: '/', text: 'back-to-home', icon: <SVGIcon src={home.src} /> }
         ]}
         withoutTopMargin
