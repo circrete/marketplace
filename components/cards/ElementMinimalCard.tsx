@@ -8,7 +8,6 @@ import { ICardContentProps } from '@/lib/cardContent';
 import { ElementData } from '@/lib/elements';
 
 const InteractionIcon = (element: ElementData) => {
-  const { t } = useTranslation('common');
   const { liked } = useCircreteStore();
   return liked.has(element.id) ? (
     <SVGIcon onClick={() => useCircreteStore.getState().removeLiked(element.id)} src={heartBroken.src} />
@@ -18,8 +17,6 @@ const InteractionIcon = (element: ElementData) => {
 };
 
 export const ElementMinimalCard: React.FC<ICardContentProps> = ({ element }) => {
-  const { t } = useTranslation('common');
-
   return (
     <Link
       href={`/elements/${element.id}`}
