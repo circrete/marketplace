@@ -5,21 +5,46 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 
 import Link from '../../components/Link';
+import { Navigation } from '@/components/Navigation';
+import { SVGIcon } from '@/components/SVGIcon';
+
+import heart from '/assets/icons/heart.svg';
+import cart from '/assets/icons/shopping_cart.svg';
+import home from '/assets/icons/home.svg';
+import Head from 'next/head';
+import logo from '/assets/icons/circrete.svg';
 
 const Homepage = () => {
-  const { t } = useTranslation(['404', 'common', 'footer']);
+  const { t } = useTranslation(['404', 'footer']);
 
   return (
     <>
       <main>
-        <Header heading={'h1'} title={'title'} />
+        <Navigation
+          heading={t('heading')}
+          links={[
+            { href: 'favorites', text: 'to-favorites', icon: <SVGIcon src={heart.src} /> },
+            { href: 'all-elements', text: 'to-all-elements', icon: <SVGIcon src={cart.src} /> },
+            { href: '/', text: 'back-to-home', icon: <SVGIcon src={home.src} /> }
+          ]}
+          withoutTopMargin
+        />
+        <div className="max-w-standard-div standard-padding flex lg:flex-row lg:justify-center flex-col items-center justify-center gap-x-8 gap-y-2 p-4">
+          <img
+            src={logo.src}
+            alt="logo"
+            className="w-[min(min(30svh,80svw),300px)] min-w-[min(min(30svh,80svw),200px)]"
+          />
+          <p className={'lg:text-left text-[1.5rem] sm:text-[3rem] text-circretered max-w-[90svw] w-[690px] '}>
+            {t('h1')}
+          </p>
+        </div>
         <div>
           <Link href="/" skipLocaleHandling={false}>
             <button type="button">{t('common:back-to-home')}</button>
           </Link>
         </div>
       </main>
-      <Footer />
     </>
   );
 };
