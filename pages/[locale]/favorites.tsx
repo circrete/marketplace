@@ -8,7 +8,6 @@ import { ElementData, Elements } from '@/lib/elements';
 import { SVGIcon } from '@/components/SVGIcon';
 
 import cart from '/assets/icons/shopping_cart.svg';
-import burger from '/assets/icons/burger.svg';
 import home from '/assets/icons/home.svg';
 import { CardRenderer } from '@/components/cards/CardRenderer';
 import { useMemo } from 'react';
@@ -49,18 +48,5 @@ const Favorites: React.FC = () => {
 
 export default Favorites;
 
-const getStaticProps = makeStaticProps(['common', 'footer']);
+const getStaticProps = makeStaticProps(['common', 'building-type', 'element-type']);
 export { getStaticPaths, getStaticProps };
-
-// // or if you want to merge the i18n props with other props...
-// export { getStaticPaths };
-// export const getStaticProps = async (ctx: any) => {
-//   // some data fetched from anywhere...
-//   const someOtherData = 'hello world';
-//   return {
-//     props: {
-//       ...(await getI18nProps(ctx, ['second-page', 'common', 'footer'])),
-//       someOtherData
-//     }
-//   };
-// };

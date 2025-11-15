@@ -7,7 +7,6 @@ import { getStaticPaths, makeStaticProps } from '@/lib/getStatic';
 import { SVGIcon } from '@/components/SVGIcon';
 
 import heart from '/assets/icons/heart.svg';
-import burger from '/assets/icons/burger.svg';
 import home from '/assets/icons/home.svg';
 import { CardRenderer } from '@/components/cards/CardRenderer';
 
@@ -36,5 +35,5 @@ export const AllElements = () => {
 
 export default AllElements;
 
-const getStaticProps = makeStaticProps(['all-elements']);
+const getStaticProps = makeStaticProps(['all-elements', 'common', 'building-type', 'element-type']);
 export { getStaticPaths, getStaticProps };

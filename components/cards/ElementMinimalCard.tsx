@@ -6,6 +6,7 @@ import heartBroken from '/assets/icons/heart_broken.svg';
 import { useCircreteStore } from '@/lib/store';
 import { ICardContentProps } from '@/lib/cardContent';
 import { ElementData } from '@/lib/elements';
+import { ElementDataContent } from './ElementDataContent';
 
 const InteractionIcon = (element: ElementData) => {
   const { liked } = useCircreteStore();
@@ -23,9 +24,9 @@ export const ElementMinimalCard: React.FC<ICardContentProps> = ({ element }) => 
       className={`element-card minimal h-[calc(min(300px,60svw))] rounded-2xl overflow-clip shadow-xl`}
     >
       <img src={element.src} alt="lamp" className="w-full h-[calc(100%-2.5rem)] object-cover" />
-      <div className="font-bold grid grid-cols-[2rem_auto] items-center h-[2.5rem] w-full shadow-none py-2 px-4">
+      <div className="font-bold grid grid-cols-[1fr_auto] items-center h-[2.5rem] w-full shadow-none py-1 px-2">
         {InteractionIcon(element)}
-        <p className="text-3 truncate text-right">{element.name}</p>
+        <ElementDataContent element={element} detailLevel="minimal" />
       </div>
     </Link>
   );

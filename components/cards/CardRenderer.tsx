@@ -10,6 +10,7 @@ const DetailLevelSelector: React.FC<{
   setDetailLevel: (detailLevel: (typeof CardDetailLevel)[number]) => void;
 }> = ({ detailLevel, setDetailLevel, className }) => {
   const { t } = useTranslation('common');
+
   return (
     <span className={`flex flex-row gap-2 items-center ${className}`}>
       <label>{t('detail-level')}</label>:

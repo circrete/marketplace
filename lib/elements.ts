@@ -12,7 +12,8 @@ import tt_slabs_03 from '/assets/images/elements/tt-slabs-3.jpg';
 import tt_slabs_04 from '/assets/images/elements/tt-slabs-4.jpg';
 import tt_slabs_05 from '/assets/images/elements/tt-slabs-5.jpg';
 
-export const ElementTypes = ['column', 'tt-slab', 'hollow-core-slab'] as const;
+export const ElementTypologies = ['column', 'tt-slab', 'hollow-core-slab', 'slab-roof'] as const;
+export const BuildingTypologies = ['residential', 'commercial', 'industrial', 'mixed-use'] as const;
 
 export type ElementData = {
   id: number;
@@ -27,7 +28,8 @@ export type ElementData = {
   };
   amount: number;
   dimensions: [number, number, number]; // width, height, depth
-  type: (typeof ElementTypes)[number];
+  type: (typeof ElementTypologies)[number];
+  buildingTypology: (typeof BuildingTypologies)[number];
 };
 
 const defaultLocation: ElementData['location'] = {
@@ -46,16 +48,18 @@ export const Elements: ElementData[] = [
     location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
-    type: 'column'
+    type: 'column',
+    buildingTypology: 'residential'
   },
   {
     id: 2,
     src: column_02.src,
     name: 'Columns 7x345 B',
     location: defaultLocation,
-    amount: 1,
-    dimensions: [100, 100, 100],
-    type: 'column'
+    amount: 999,
+    dimensions: [1000, 1000, 1000],
+    type: 'column',
+    buildingTypology: 'residential'
   },
   {
     id: 3,
@@ -64,7 +68,8 @@ export const Elements: ElementData[] = [
     location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
-    type: 'column'
+    type: 'column',
+    buildingTypology: 'industrial'
   },
   {
     id: 4,
@@ -73,7 +78,8 @@ export const Elements: ElementData[] = [
     location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
-    type: 'column'
+    type: 'column',
+    buildingTypology: 'industrial'
   },
   {
     id: 5,
@@ -82,7 +88,8 @@ export const Elements: ElementData[] = [
     location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
-    type: 'hollow-core-slab'
+    type: 'hollow-core-slab',
+    buildingTypology: 'commercial'
   },
   {
     id: 6,
@@ -91,7 +98,8 @@ export const Elements: ElementData[] = [
     location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
-    type: 'hollow-core-slab'
+    type: 'hollow-core-slab',
+    buildingTypology: 'industrial'
   },
   {
     id: 7,
@@ -100,7 +108,8 @@ export const Elements: ElementData[] = [
     location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
-    type: 'hollow-core-slab'
+    type: 'hollow-core-slab',
+    buildingTypology: 'industrial'
   },
   {
     id: 8,
@@ -109,7 +118,8 @@ export const Elements: ElementData[] = [
     location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
-    type: 'hollow-core-slab'
+    type: 'hollow-core-slab',
+    buildingTypology: 'industrial'
   },
   {
     id: 9,
@@ -118,7 +128,8 @@ export const Elements: ElementData[] = [
     location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
-    type: 'tt-slab'
+    type: 'tt-slab',
+    buildingTypology: 'industrial'
   },
   {
     id: 10,
@@ -127,7 +138,8 @@ export const Elements: ElementData[] = [
     location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
-    type: 'tt-slab'
+    type: 'tt-slab',
+    buildingTypology: 'commercial'
   },
   {
     id: 11,
@@ -136,7 +148,8 @@ export const Elements: ElementData[] = [
     location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
-    type: 'tt-slab'
+    type: 'tt-slab',
+    buildingTypology: 'commercial'
   },
   {
     id: 12,
@@ -145,7 +158,8 @@ export const Elements: ElementData[] = [
     location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
-    type: 'tt-slab'
+    type: 'tt-slab',
+    buildingTypology: 'commercial'
   },
   {
     id: 13,
@@ -154,6 +168,7 @@ export const Elements: ElementData[] = [
     location: defaultLocation,
     amount: 1,
     dimensions: [100, 100, 100],
-    type: 'tt-slab'
+    type: 'tt-slab',
+    buildingTypology: 'mixed-use'
   }
 ];

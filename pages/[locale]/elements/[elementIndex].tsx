@@ -37,7 +37,7 @@ export const Element = () => {
 
 export default Element;
 
-const getStaticProps = makeStaticProps(['404', 'common', 'footer']);
+const getStaticProps = makeStaticProps(['common', 'footer', 'building-type', 'element-type']);
 const getStaticPaths = getStaticPathsWithAdditionalParams(
   Elements.map((_, index) => ({ elementIndex: index.toString() }))
 );

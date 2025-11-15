@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import i18nextConfig from '../next-i18next.config';
-import { Header } from '@/components/Header';
 
 class MyDocument extends Document {
   render() {

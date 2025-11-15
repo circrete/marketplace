@@ -6,6 +6,7 @@ import cart from '/assets/icons/shopping_cart.svg';
 import { ICardContentProps } from '@/lib/cardContent';
 import { useCircreteStore } from '@/lib/store';
 import { ElementData } from '@/lib/elements';
+import { ElementDataContent } from './ElementDataContent';
 
 const EMAIL = 'contact@circrete.dk';
 // create mailto with basic element data to contact@circrete.dk method
@@ -14,16 +15,16 @@ const getMailTo = (element: ElementData) => {
 };
 
 export const ElementContentCard: React.FC<ICardContentProps> = ({ element }) => {
-  const { t } = useTranslation(['common', 'element-type']);
+  const { t } = useTranslation('common');
 
   return (
-    <div className="element-card grid grid-cols-[1fr] md:grid-cols-[1fr_1fr] flex-col items-center rounded-2xl overflow-clip shadow-xl mx-auto gap-4">
+    <div className="element-card grid w-full grid-cols-[1fr] md:grid-cols-[1fr_1fr] flex-col items-center rounded-2xl overflow-clip shadow-xl mx-auto gap-4">
       <img src={element.src} alt="lamp" className="h-[calc(min(50vh,20rem))] md:h-120 w-full object-cover" />
-      <div className="my-auto px-4 font-bold flex flex-col items-start justify-between w-full gap-4 shadow-none">
-        <h3>{t(element.type)}</h3>
-        <div className="text-left">
-          <p>{t('description')}</p>
+      <div className="my-auto px-4 font-bold flex flex-col items-start justify-between w-full gap-6 shadow-none h-full">
+        <h3>{t(`element-type:${element.type}`)}</h3>
+        <div className="grid w-full grid-cols-[1fr_9rem] gap-5">
           <Map className="w-full h-50" elements={[element]} />
+          <ElementDataContent element={element} detailLevel="content" />
         </div>
         <div className="grid grid-cols-2 gap-4 justify-between w-full pb-4">
           <span

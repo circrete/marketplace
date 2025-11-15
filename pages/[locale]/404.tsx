@@ -1,9 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import { getStaticPaths, makeStaticProps } from '../../lib/getStatic';
 
-import { Header } from '../../components/Header';
-import { Footer } from '../../components/Footer';
-
 import Link from '../../components/Link';
 import { Navigation } from '@/components/Navigation';
 import { SVGIcon } from '@/components/SVGIcon';
@@ -11,7 +8,6 @@ import { SVGIcon } from '@/components/SVGIcon';
 import heart from '/assets/icons/heart.svg';
 import cart from '/assets/icons/shopping_cart.svg';
 import home from '/assets/icons/home.svg';
-import Head from 'next/head';
 import logo from '/assets/icons/circrete.svg';
 
 const Homepage = () => {
