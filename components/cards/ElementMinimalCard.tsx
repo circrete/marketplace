@@ -21,7 +21,7 @@ export const ElementMinimalCard: React.FC<ICardContentProps> = ({ element }) => 
   return (
     <Link
       href={`/elements/${element.id}`}
-      className={`element-card minimal h-[calc(min(300px,60svw))] rounded-2xl overflow-clip shadow-xl`}
+      className={`element-card minimal h-[calc(min(250px,60svh))] rounded-2xl overflow-clip shadow-xl`}
     >
       <img src={element.src} alt="lamp" className="w-full h-[calc(100%-2.5rem)] object-cover" />
       <div className="font-bold grid grid-cols-[1fr_auto] items-center h-[2.5rem] w-full shadow-none py-1 px-2">
