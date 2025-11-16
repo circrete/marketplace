@@ -46,7 +46,7 @@ export const CardRenderer: React.FC<ICardDisplayProps> = ({ detailLevel, element
         </div>
       </div>
 
-      <div className="w-full overflow-y-scroll">
+      <div className="w-full overflow-y-auto">
         <div className="h-5" />
         <div className="w-full">
           <div className={`element-card-grid card-grid-padding ${localDetailLevel}`}>
