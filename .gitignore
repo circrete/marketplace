@@ -12,3 +12,6 @@ bun.lock
 
 # ignoring .next
 .next
+
+# adding the .DS_Store
+.DS_Store
