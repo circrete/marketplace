@@ -34,7 +34,7 @@ export const CardRenderer: React.FC<ICardDisplayProps> = ({ detailLevel, element
   const [localDetailLevel, setLocalDetailLevel] = useState<(typeof CardDetailLevel)[number]>(detailLevel ?? 'minimal');
 
   return (
-    <div className={`${className} overlfow-y-none grid grid-rows-[1fr_auto] w-full`}>
+    <div className={`${className} overlfow-y-none grid grid-rows-[auto_1fr] w-full`}>
       <div className="w-full bg-background z-1 pt-1">
         <DetailLevelSelector
           className="card-grid-padding"
