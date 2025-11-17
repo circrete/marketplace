@@ -18,7 +18,7 @@ export const ElementDataContent: React.FC<{ element: ElementData; detailLevel: (
         props.detailLevel === 'content' ? 'flex-col items-start' : 'flex-row items-center'
       }`}
     >
-      <DimensionValues element={props.element} sizeClass={sizeClass} />
+      <DimensionValues sizeClass={sizeClass} {...props} />
       <BuildingTypology {...props} sizeClass={sizeClass} />
       <ElementTypology {...props} sizeClass={sizeClass} />
       {props.detailLevel === 'content' ? (
