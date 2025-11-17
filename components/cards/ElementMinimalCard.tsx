@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import Link from '../Link';
 import { SVGIcon } from '@/components/SVGIcon';
 import heart from '/assets/icons/heart.svg';
@@ -11,9 +10,9 @@ import { ElementDataContent } from './ElementDataContent';
 const InteractionIcon = (element: ElementData) => {
   const { liked } = useCircreteStore();
   return liked.has(element.id) ? (
-    <SVGIcon onClick={() => useCircreteStore.getState().removeLiked(element.id)} src={heartBroken.src} />
+    <SVGIcon onClick={() => useCircreteStore.getState().removeLiked(element.id)} src={heart.src} />
   ) : (
-    <SVGIcon onClick={() => useCircreteStore.getState().addLiked(element.id)} src={heart.src} />
+    <SVGIcon onClick={() => useCircreteStore.getState().addLiked(element.id)} src={heartBroken.src} />
   );
 };
 
