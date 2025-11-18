@@ -28,15 +28,15 @@ export const ElementContentCard: React.FC<ICardContentProps> = ({ element }) => 
         </div>
         <div className="grid grid-cols-2 gap-4 justify-between w-full pb-4">
           <span
-            className="bg-white-700 text-black cursor-pointer p-2 shadow-xl border-1 rounded-2xl flex flex-row gap-2 justify-center items-center"
+            className="text-black cursor-pointer p-2 shadow-xl border-1 rounded-2xl flex flex-row gap-2 justify-center items-center"
             onClick={() => useCircreteStore.getState().removeLiked(element.id)}
           >
             <SVGIcon src={brokenHeart.src} className="h-4 my-auto" />
             {t('dislike')}
           </span>
           <a
-            href={getMailTo(element)}
-            className="bg-white-700 text-black cursor-pointer p-2 shadow-xl border-1 rounded-2xl flex flex-row gap-2 justify-center items-center"
+            // href={getMailTo(element)}
+            className="bg-gray-300 text-black cursor-not-allowed p-2 shadow-xl border-1 rounded-2xl flex flex-row gap-2 justify-center items-center"
           >
             <SVGIcon src={cart.src} className="h-4 my-auto" />
             {t('buy')}
