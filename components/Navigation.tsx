@@ -2,6 +2,7 @@ import logo from '/assets/icons/circrete.svg';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitchLink from './LanguageSwitchLink';
 import Link from './Link';
+import { PlaceholderIcon } from './iconography/PlaceholderIcon';
 
 export const Navigation: React.FC<{
   heading: string;
@@ -17,6 +18,7 @@ export const Navigation: React.FC<{
           <Link href="/">
             <img src={logo.src} alt="logo" className="h-12" />
           </Link>
+          <PlaceholderIcon sizeClass="text-sm" />
           <span className="text-sm flex flex-row items-center gap-2">
             {links.map((link) => (
               <Link
