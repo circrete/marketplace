@@ -17,5 +17,6 @@
   "buy": "Purchase",
   "detail-level": "Detail Level",
   "minimal": "Minimal",
-  "content": "Detail"
+  "content": "Detail",
+  "placeholder": "Example Data"
 }
