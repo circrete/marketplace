@@ -63,7 +63,7 @@
 }
 
 .element-card:hover {
-  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.46);
+  /* box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.46); */
   filter: saturate(110%);
 }
 
