@@ -115,42 +115,6 @@ p {
   line-height: 1.65em;
 }
 
-button {
-  /* display: inline-block; */
-  vertical-align: bottom;
-  outline: 0;
-  text-decoration: none;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.5);
-  box-sizing: border-box;
-  border-radius: 3px;
-  /* user-select: none; */
-  line-height: 2.5em;
-  border: 0;
-  color: var(--color-circretered);
-  font-size: 1em;
-  font-family: inherit;
-  font-weight: 700;
-  position: relative;
-  transform: translateZ(0);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  transition: box-shadow 0.2s ease;
-  min-height: 40px;
-  padding: 0 0.8em;
-  margin: 0.8rem;
-  white-space: nowrap;
-  width: auto;
-  max-width: 200px;
-  scale: 1.0;
-  transition: 0.2s ease-in-out;
-}
-
-button:hover,
-button:focus {
-  transform: scale(1.01);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-}
-
 main {
   display: flex;
   flex-direction: column;
