@@ -15,7 +15,7 @@ const getMailTo = (element: ElementData) => {
 };
 
 export const ElementContentCard: React.FC<ICardContentProps> = ({ element }) => {
-  const { t } = useTranslation(['common', 'element-type']);
+  const { t } = useTranslation('common');
 
   return (
     <div className="element-card grid w-full grid-cols-[1fr] md:grid-cols-[1fr_1fr] flex-col items-center rounded-2xl overflow-clip shadow-xl mx-auto gap-4">
@@ -26,7 +26,7 @@ export const ElementContentCard: React.FC<ICardContentProps> = ({ element }) => 
         </div>
       </div>
       <div className="my-auto p-3 font-bold flex flex-col items-start justify-between w-full gap-4 shadow-none h-full">
-        <h3 className="md:pt-4">{t(element.type)}</h3>
+        <h3 className="md:pt-4">{t(`element-type:${element.type}`)}</h3>
         <div className="grid w-full grid-cols-[1fr_auto] gap-5">
           <Map className="w-full h-50" elements={[element]} />
           <ElementDataContent element={element} detailLevel="content" />
