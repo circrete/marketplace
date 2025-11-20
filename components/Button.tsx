@@ -22,8 +22,6 @@ export const Button: React.FC<{
 }> = ({ children, className, onClick, disabled, tooltip, href, dontLocalizedHref = false }) => {
   const router = useRouter();
 
-  console.log(router.asPath);
-
   return (
     <Tooltip text={tooltip}>
       {href ? (

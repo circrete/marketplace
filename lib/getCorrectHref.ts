@@ -11,7 +11,6 @@ const deconstructHref = (href: string) => ({
 
 export const navigateTo = (currentHref: string, newHref: string): string => {
   const { locale } = deconstructHref(currentHref);
-  console.log(locale, newHref, BASE_HREF);
   return (
     (BASE_HREF === '/' ? BASE_HREF : BASE_HREF + '/') + locale + (newHref.startsWith('/') ? newHref : '/' + newHref)
   );
