@@ -32,15 +32,14 @@ const Favorites: React.FC = () => {
           { href: 'all-elements', text: 'to-all-elements', icon: <SVGIcon src={cart.src} /> },
           { href: '/', text: 'back-to-home', icon: <SVGIcon src={home.src} /> }
         ]}
-        withoutTopMargin
       />
       {elements.length ? (
         <div className="w-full h-[100svh] grid grid-rows-[1fr_auto] max-w-standard-div">
-          <p className="mt-[50px] h-[25px]">{t('your-favorites')}</p>
-          <CardRenderer className="h-[calc(100svh-75px)]" detailLevel="content" elements={elements} />
+          <p className="h-[25px]">{t('your-favorites')}</p>
+          <CardRenderer className="h-[calc(100svh-75px-4.5rem)]" detailLevel="content" elements={elements} />
         </div>
       ) : (
-        <p className="mt-[50px] h-[25px]">{t('no-favorites')}</p>
+        <p className="h-[25px]">{t('no-favorites')}</p>
       )}
     </>
   );
