@@ -43,7 +43,7 @@ export const Map: React.FC<{ elements: ElementData[]; className: string }> = ({ 
       />
       {elements.map((element) => (
         <Marker position={element.location.position}>
-          <Popup>
+          {/* <Popup>
             <h4>{element.name}</h4>
             <span className="flex flex-col gap-2">
               <p>
@@ -51,7 +51,7 @@ export const Map: React.FC<{ elements: ElementData[]; className: string }> = ({ 
               </p>
               <p>{element.location.address}</p>
             </span>
-          </Popup>
+          </Popup> */}
         </Marker>
       ))}
     </MapContainer>
