@@ -40,7 +40,7 @@ const Favorites: React.FC = () => {
           <CardRenderer className="h-[calc(100svh-100px)]" detailLevel="content" elements={elements} />
         </div>
       ) : (
-        <p className="mt-[50px] h-[25px]">{t('no-favorites')}</p>
+        <p className="mt-[75px] h-[25px]">{t('no-favorites')}</p>
       )}
     </>
   );
