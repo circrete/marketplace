@@ -1,4 +1,6 @@
+import { useRouter } from 'next/router';
 import { Tooltip } from './Tooltip';
+import { navigateTo } from '@/lib/getCorrectHref';
 
 const baseStyle =
   'p-2 shadow-xl border-1 rounded-2xl flex flex-row gap-2 justify-center items-center transition-all duration-400 hover:shadow-2xl';
@@ -15,16 +17,23 @@ export const Button: React.FC<{
   disabled?: boolean;
   tooltip?: string;
   href?: string;
-}> = ({ children, className, onClick, disabled, tooltip, href }) => (
-  <Tooltip text={tooltip}>
-    {href ? (
-      <a href={disabled ? undefined : href} className={getStyle(disabled, className)} title={tooltip}>
-        {children}
-      </a>
-    ) : (
-      <button onClick={onClick} disabled={disabled} className={getStyle(disabled, className)} title={tooltip}>
-        {children}
-      </button>
-    )}
-  </Tooltip>
-);
+  dontLocalizedHref?: boolean;
+}> = ({ children, className, onClick, disabled, tooltip, href, dontLocalizedHref = false }) => {
+  return (
+    <Tooltip text={tooltip}>
+      {href ? (
+        <a
+          href={disabled ? undefined : dontLocalizedHref ? href : navigateTo(useRouter().asPath, href)}
+          className={getStyle(disabled, className)}
+          title={tooltip}
+        >
+          {children}
+        </a>
+      ) : (
+        <button onClick={onClick} disabled={disabled} className={getStyle(disabled, className)} title={tooltip}>
+          {children}
+        </button>
+      )}
+    </Tooltip>
+  );
+};
