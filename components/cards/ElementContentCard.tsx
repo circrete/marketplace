@@ -36,13 +36,13 @@ export const ElementContentCard: React.FC<ICardContentProps> = ({ element }) => 
           <span className="text-gray-600 text-4xl font-bold">Demo</span>
         </div>
       </div>
-      <div className="my-auto px-4 font-bold flex flex-col items-start justify-between w-full gap-6 shadow-none h-full pt-6">
-        <h3>{t(`element-type:${element.type}`)}</h3>
+      <div className="my-auto p-3 font-bold flex flex-col items-start justify-between w-full gap-4 shadow-none h-full">
+        <h3 className="md:pt-4">{t(`element-type:${element.type}`)}</h3>
         <div className="grid w-full grid-cols-[1fr_auto] gap-5">
           <Map className="w-full h-50" elements={[element]} />
           <ElementDataContent element={element} detailLevel="content" />
         </div>
-        <div className="grid grid-cols-2 gap-4 justify-between w-full pb-4">
+        <div className="grid grid-cols-2 gap-4 justify-between w-full">
           <span
             className="text-black cursor-pointer p-2 shadow-xl border-1 rounded-2xl flex flex-row gap-2 justify-center items-center"
             onClick={toggleLike}
