@@ -19,11 +19,13 @@ export const Button: React.FC<{
   href?: string;
   dontLocalizedHref?: boolean;
 }> = ({ children, className, onClick, disabled, tooltip, href, dontLocalizedHref = false }) => {
+  const router = useRouter();
+
   return (
     <Tooltip text={tooltip}>
       {href ? (
         <a
-          href={disabled ? undefined : dontLocalizedHref ? href : navigateTo(useRouter().asPath, href)}
+          href={disabled ? undefined : dontLocalizedHref ? href : navigateTo(router.asPath, href)}
           className={getStyle(disabled, className)}
           title={tooltip}
         >
