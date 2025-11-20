@@ -13,10 +13,10 @@ const Homepage = () => {
     <div className="bg-circretemokka-900 h-[100svh] flex flex-col lg:justify-end lg:gap-30 justify-around items-center">
       <Header className="text-black" heading={'h1'} title={'title'} />
       <div className="flex flex-col sm:flex-row gap-x-4 gap-y-1">
-        <Button className="px-4" href={'/all-elements'}>
+        <Button className="px-4" href={'/all-elements'} dontLocalizedHref>
           {t('to-all-elements')}
         </Button>
-        <Button className="px-4" href={'/favorites'}>
+        <Button className="px-4" href={'/favorites'} dontLocalizedHref>
           {t('to-favorites')}
         </Button>
       </div>
