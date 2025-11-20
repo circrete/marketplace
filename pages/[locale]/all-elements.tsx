@@ -1,6 +1,4 @@
-import { useTranslation } from 'next-i18next';
 import { Navigation } from '@/components/Navigation';
-import { ElementMinimalCard } from '@/components/cards/ElementMinimalCard';
 import { Elements } from '@/lib/elements';
 import { Map } from '@/components/leaflet/LazyMap';
 import { getStaticPaths, makeStaticProps } from '@/lib/getStatic';
@@ -11,8 +9,6 @@ import home from '/assets/icons/home.svg';
 import { CardRenderer } from '@/components/cards/CardRenderer';
 
 export const AllElements = () => {
-  const { t } = useTranslation(['all-elements']);
-
   return (
     <>
       <Navigation
