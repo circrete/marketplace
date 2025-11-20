@@ -36,11 +36,11 @@ const Favorites: React.FC = () => {
       />
       {elements.length ? (
         <div className="w-full h-[100svh] grid grid-rows-[1fr_auto] max-w-standard-div">
-          <p className="mt-[50px] h-[25px]">{t('your-favorites')}</p>
-          <CardRenderer className="h-[calc(100svh-75px)]" detailLevel="content" elements={elements} />
+          <p className="mt-[75px] h-[25px]">{t('your-favorites')}</p>
+          <CardRenderer className="h-[calc(100svh-100px)]" detailLevel="content" elements={elements} />
         </div>
       ) : (
-        <p className="mt-[50px] h-[25px]">{t('no-favorites')}</p>
+        <p className="mt-[75px] h-[25px]">{t('no-favorites')}</p>
       )}
     </>
   );
